@@ -61,7 +61,6 @@ public class TestOrderScooter {
         UserOrderForm objectUserOrderForm = new UserOrderForm(driver);
         OrderForm objectOrderForm = new OrderForm(driver);
         AcceptModal objectAcceptModal = new AcceptModal(driver);
-
         objectMainPage.clickCookieButton();
 
         new WebDriverWait (driver, 10)
