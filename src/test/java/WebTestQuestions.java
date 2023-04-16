@@ -1,3 +1,4 @@
+import config.AppConfig;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -5,9 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import  org.junit.After;
 import org.junit.Before;
-
+import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
+
 
 public class WebTestQuestions {
     private WebDriver driver;
@@ -26,7 +28,7 @@ public class WebTestQuestions {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+        driver.get(AppConfig.URL);
     }
 //1
 @Test
