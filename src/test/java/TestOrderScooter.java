@@ -1,3 +1,4 @@
+import config.AppConfig;
 import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Before;
@@ -16,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.hamcrest.CoreMatchers.startsWith;
 
 public class TestOrderScooter {
+
     private WebDriver driver;
     private String expectedTextSuccessfulOrder = "Заказ оформлен";
 
@@ -27,7 +29,7 @@ public class TestOrderScooter {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver (options);
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+        driver.get(AppConfig.URL);
  }
     @Test
     public void firstOrder() {
@@ -61,11 +63,12 @@ public class TestOrderScooter {
         UserOrderForm objectUserOrderForm = new UserOrderForm(driver);
         OrderForm objectOrderForm = new OrderForm(driver);
         AcceptModal objectAcceptModal = new AcceptModal(driver);
+
         objectMainPage.clickCookieButton();
 
         new WebDriverWait (driver, 10)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#root > div > div > div.Home_ThirdPart__LSTEE > div.Home_RoadMap__2tal_ > div.Home_FinishButton__1_cWm > button")));
-        WebElement element = driver.findElement(By.cssSelector("#root > div > div > div.Home_ThirdPart__LSTEE > div.Home_RoadMap__2tal_ > div.Home_FinishButton__1_cWm > button"));
+                .until(ExpectedConditions.visibilityOfElementLocated(MainPage.BOTTOM_ORDER_BUTTON));
+        WebElement element = driver.findElement(MainPage.BOTTOM_ORDER_BUTTON);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
 
         objectMainPage.clickBottomButtonOfOrder();

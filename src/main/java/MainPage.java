@@ -3,6 +3,8 @@ import org.openqa.selenium.WebDriver;
 
 public class MainPage {
     private WebDriver driver;
+
+    public static final By BOTTOM_ORDER_BUTTON = By.cssSelector("#root > div > div > div.Home_ThirdPart__LSTEE > div.Home_RoadMap__2tal_ > div.Home_FinishButton__1_cWm > button"); ;
     //1
     private By firstQuestionDropDownList = By.id ("accordion__heading-0");
     private By firstAnswerText = By.xpath(".//div[@id='accordion__panel-0']/p");
@@ -30,6 +32,7 @@ public class MainPage {
 
     private By TopButtonOfOrder = By.className("Button_Button__ra12g");
     private By BottomButtonOfOrder = By.cssSelector("#root > div > div > div.Home_ThirdPart__LSTEE > div.Home_RoadMap__2tal_ > div.Home_FinishButton__1_cWm > button");
+
 
 
     public MainPage ( WebDriver driver) {
