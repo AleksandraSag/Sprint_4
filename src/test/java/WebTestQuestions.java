@@ -11,6 +11,7 @@ import java.net.URL;
 import static org.junit.Assert.assertEquals;
 
 
+
 public class WebTestQuestions {
     private WebDriver driver;
     private String expectedFirstAnswerText = "Сутки — 400 рублей. Оплата курьеру — наличными или картой.";

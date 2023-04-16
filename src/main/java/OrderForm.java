@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
 public class OrderForm {
     private WebDriver driver;
     private By date = By.xpath (".//input[@placeholder='* Когда привезти самокат']");
