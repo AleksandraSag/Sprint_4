@@ -17,7 +17,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.hamcrest.CoreMatchers.startsWith;
 
 public class TestOrderScooter {
-
     private WebDriver driver;
     private String expectedTextSuccessfulOrder = "Заказ оформлен";
 

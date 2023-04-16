@@ -12,7 +12,6 @@ import static org.junit.Assert.assertEquals;
 
 
 public class WebTestQuestions {
-
     private WebDriver driver;
     private String expectedFirstAnswerText = "Сутки — 400 рублей. Оплата курьеру — наличными или картой.";
     private String expectedSecondAnswerText = "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.";
