@@ -3,17 +3,15 @@ import org.hamcrest.MatcherAssert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static org.hamcrest.CoreMatchers.startsWith;
 
 
@@ -67,8 +65,8 @@ public class TestOrderScooter {
         objectMainPage.clickCookieButton();
 
         new WebDriverWait (driver, 10)
-                .until(ExpectedConditions.visibilityOfElementLocated(MainPage.BOTTOM_ORDER_BUTTON));
-        WebElement element = driver.findElement(MainPage.BOTTOM_ORDER_BUTTON);
+                .until(ExpectedConditions.visibilityOfElementLocated(objectMainPage.findBottomButtonOfOrder()));
+        WebElement element = driver.findElement(objectMainPage.findBottomButtonOfOrder());
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
 
         objectMainPage.clickBottomButtonOfOrder();
